@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir Restoran Modern</title>
+    <link rel="stylesheet" href="kasir.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>🍽️ Kasir Restoran</h2>
+
+        <!-- INPUT MENU -->
+        <div class="card">
+            <label>Pilih Menu:</label>
+            <select id="menu">
+                <option value="Nasi Goreng|15000">Nasi Goreng - Rp15.000</option>
+                <option value="Ayam Geprek|20000">Ayam Geprek - Rp20.000</option>
+                <option value="Es Teh|5000">Es Teh - Rp5.000</option>
+                <option value="Kopi|10000">Kopi - Rp10.000</option>
+            </select>
+
+            <label>Jumlah Porsi:</label>
+            <input type="number" id="jumlah" value="1" min="1">
+
+            <button onclick="tambahKeranjang()">➕ Tambah ke Keranjang</button>
+        </div>
+
+        <!-- KERANJANG -->
+        <div class="card">
+            <h3>🛒 Keranjang</h3>
+            <table id="tabel" class="tabel">
+                <thead>
+                    <tr>
+                        <th>Menu</th>
+                        <th>Qty</th>
+                        <th>Harga</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="isiKeranjang"></tbody>
+            </table>
+        </div>
+
+        <!-- PEMBAYARAN -->
+        <div class="card">
+            <label>Metode Pembayaran:</label>
+            <select id="metode">
+                <option value="cash">Cash (Tanpa Admin)</option>
+                <option value="qris">QRIS (+Rp1.000)</option>
+                <option value="ewallet">E-Wallet (-Rp2.000)</option>
+            </select>
+
+            <button onclick="prosesPembayaran()">💵 Proses Pembayaran</button>
+        </div>
+
+        <!-- STRUK -->
+        <div id="struk" class="struk hide"></div>
+
+        <!-- RESET -->
+        <button id="btnReset" class="btn-reset hide" onclick="resetTransaksi()">🔄 Transaksi Baru</button>
+    </div>
+
+    <script src="kasir.js"></script>
+</body>
+</html>
